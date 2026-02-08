@@ -6,7 +6,7 @@
 </head>
 
 <body>
-
+<div id="fundbar" style="background:#16a34a;padding:10px;font-weight:bold;"></div>
 <header>
 <h1>Kammatipadam Game Family</h1>
 <p>Official Website</p>
@@ -28,6 +28,13 @@
 <footer>
 <p>© Kammatipadam Family</p>
 </footer>
-
+<script>
+fetch('fund.json')
+.then(res => res.json())
+.then(data=>{
+document.getElementById('fundbar').innerText =
+"Family Fund Balance: " + data.balance;
+});
+</script>
 </body>
 </html>
