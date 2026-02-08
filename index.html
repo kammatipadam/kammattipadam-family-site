@@ -6,7 +6,23 @@
 </head>
 
 <body>
-<div id="fundbar" style="background:#16a34a;padding:10px;font-weight:bold;"></div>
+
+<div id="fundbar" 
+style="
+position:fixed;
+top:15px;
+right:15px;
+background:#16a34a;
+color:white;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+z-index:1000;
+">
+Loading fund...
+</div>
+
 <header>
 <h1>Kammatipadam Game Family</h1>
 <p>Official Website</p>
@@ -15,7 +31,7 @@
 <nav>
 <a href="join.html">Join</a>
 <a href="members.html">Members</a>
-<a href="#">Vehicles</a>
+<a href="vehicles.html">Vehicles</a>
 <a href="#">Gallery</a>
 <a href="#">Events</a>
 </nav>
@@ -28,13 +44,15 @@
 <footer>
 <p>© Kammatipadam Family</p>
 </footer>
+
 <script>
 fetch('fund.json')
 .then(res => res.json())
 .then(data=>{
 document.getElementById('fundbar').innerText =
-"Family Fund Balance: " + data.balance;
+"Family Fund: " + data.balance;
 });
 </script>
+
 </body>
 </html>
