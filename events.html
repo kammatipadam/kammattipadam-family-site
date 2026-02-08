@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kammatipadam Family Events</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+background:#0f172a;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+
+#events{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#1e293b;
+width:260px;
+padding:20px;
+border-radius:12px;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Family Events</h1>
+
+<section id="events"></section>
+
+<script>
+fetch('events.json')
+.then(res => res.json())
+.then(data => {
+const container = document.getElementById('events');
+
+data.forEach(e => {
+container.innerHTML += `
+<div class="card">
+<img src="${e.photo}">
+<h3>${e.title}</h3>
+<p>${e.date}</p>
+</div>
+`;
+});
+});
+</script>
+
+</body>
+</html>
