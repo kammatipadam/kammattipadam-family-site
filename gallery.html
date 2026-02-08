@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kammatipadam Gallery</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+background:#0f172a;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+
+#gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.item{
+background:#1e293b;
+padding:15px;
+border-radius:12px;
+}
+
+.item img{
+width:100%;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Kammatipadam Achievements</h1>
+
+<section id="gallery"></section>
+
+<script>
+fetch('gallery.json')
+.then(res => res.json())
+.then(data => {
+const container = document.getElementById('gallery');
+
+data.forEach(g => {
+container.innerHTML += `
+<div class="item">
+<img src="${g.photo}">
+<p>${g.title}</p>
+</div>
+`;
+});
+});
+</script>
+
+</body>
+</html>
