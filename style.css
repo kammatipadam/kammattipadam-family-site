@@ -1,47 +1,33 @@
-body{
-font-family: Arial;
-margin:0;
-background: linear-gradient(270deg,#020617,#0f172a,#1e1b4b,#020617);
-background-size: 600% 600%;
-animation: bgmove 12s ease infinite;
-color:white;
-text-align:center;
+.banner-box{
+position:relative;
+display:inline-block;
+border-radius:18px;
+overflow:hidden;
+padding:4px;
 }
 
-@keyframes bgmove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+.banner-box::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(120deg, transparent, white, transparent);
+animation:borderMove 4s linear infinite;
 }
 
-header{
-background:#020617;
-padding:30px;
+.banner-img{
+position:relative;
+display:block;
+width:90%;
+max-width:900px;
+border-radius:15px;
+z-index:1;
+background:#020617;   /* prevents glow bleeding */
 }
 
-nav{
-background:#1e293b;
-padding:15px;
-}
-
-nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#22c55e;
-text-shadow:0 0 10px #22c55e;
-}
-
-section{
-padding:40px;
-}
-
-footer{
-background:#020617;
-padding:20px;
+@keyframes borderMove{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
