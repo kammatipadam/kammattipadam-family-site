@@ -1,1 +1,22 @@
-
+[
+  {
+    "vehicle": "Cadillac Escalade",
+    "number": "RUS60-A462CM",
+    "photo": "CARDILAC.png"
+  },
+  {
+    "vehicle": "VOLVO XC90",
+    "number": "RUS33-O271KY",
+    "photo": "VOLVO.png"
+  },
+  {
+    "vehicle": "Mercedes G63",
+    "number": "RUS59-P259OT",
+    "photo": "G63.png"
+  },
+  {
+    "vehicle": "Range Rover SVR",
+    "number": "RUS36-O906HE",
+    "photo": "SVR.png"
+  }
+]
