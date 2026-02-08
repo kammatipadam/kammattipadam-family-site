@@ -1,45 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Kammatipadam Family Members</title>
-<link rel="stylesheet" href="style.css">
+<section id="members"></section>
 
-<style>
-.card{
-background:#1e293b;
-width:250px;
-margin:20px auto;
-padding:15px;
-border-radius:10px;
-text-align:center;
-}
+<script>
+fetch('members.json')
+.then(res => res.json())
+.then(data => {
+const container = document.getElementById('members');
 
-.card img{
-width:100%;
-border-radius:10px;
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-<h1>Kammatipadam Family Members</h1>
-</header>
-
-<section>
-
+data.forEach(member => {
+container.innerHTML += `
 <div class="card">
-<img src="ashley.jpg.png
-">
-<h3>Ashley</h3>
-<p>Leader</p>
-<p>ASH_001</p>
-<p>55221</p>
+<img src="${member.photo}">
+<h3>${member.name}</h3>
+<p>${member.role}</p>
+<p>${member.ingame}</p>
+<p>${member.number}</p>
 </div>
-
-</section>
-
-</body>
-</html>
+`;
+});
+});
+</script>
