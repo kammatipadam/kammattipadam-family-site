@@ -1,10 +1,9 @@
-/* banner animated border */
 .banner-box{
 position:relative;
 display:inline-block;
 border-radius:18px;
 padding:4px;
-background:#020617;   /* base background */
+background:#020617;
 }
 
 .banner-box::before{
@@ -16,7 +15,7 @@ padding:2px;
 background:linear-gradient(120deg, transparent, white, transparent);
 animation:borderMove 4s linear infinite;
 
-/* mask to show only border */
+/* show only border */
 -webkit-mask:
 linear-gradient(#000 0 0) content-box,
 linear-gradient(#000 0 0);
