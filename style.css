@@ -1,3 +1,46 @@
+body{
+font-family: Arial;
+margin:0;
+background: linear-gradient(270deg,#020617,#0f172a,#1e1b4b,#020617);
+background-size: 600% 600%;
+animation: bgmove 12s ease infinite;
+color:white;
+text-align:center;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+background:#020617;
+padding:30px;
+}
+
+nav{
+background:#1e293b;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:40px;
+}
+
+footer{
+background:#020617;
+padding:20px;
+}
+
+/* banner animated border */
 .banner-box{
 position:relative;
 display:inline-block;
@@ -24,7 +67,7 @@ width:90%;
 max-width:900px;
 border-radius:15px;
 z-index:1;
-background:#020617;   /* prevents glow bleeding */
+background:#020617;
 }
 
 @keyframes borderMove{
